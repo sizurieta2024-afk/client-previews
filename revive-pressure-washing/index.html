@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+  // Independent of the main script: guarantees content becomes visible no matter what.
+  document.documentElement.classList.add("js");
+  document.addEventListener("DOMContentLoaded", function () {
+    try { document.body.classList.add("loaded"); } catch (e) {}
+  });
+  setTimeout(function () {
+    try {
+      if (document.body) document.body.classList.add("loaded");
+      var r = document.querySelectorAll("[data-reveal]");
+      for (var i = 0; i < r.length; i++) r[i].classList.add("in");
+    } catch (e) {}
+  }, 1500);
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- PREVIEW ONLY: remove this noindex line when the site goes live for the client -->
+<meta name="robots" content="noindex, nofollow" />
+<title>Revive Pressure Washing — Pressure Washing in Houston, TX</title>
+<meta name="description" content="Revive Pressure Washing: trusted pressure washing in Houston. Licensed &amp; insured, 6+ years, 130+ five-star reviews. Free estimates — call (832) 922-0510." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --accent: #b4622d;
+    --accent-deep: #8a4720;
+    --accent-light: color-mix(in oklab, var(--accent) 60%, white);
+    --accent-glow: color-mix(in oklab, var(--accent) 30%, transparent);
+    --bone: #f3eee4; --bone-2: #ebe2d2; --ink: #181b1f; --ink-soft: #3b4047;
+    --slate: #111418; --slate-2: #181c22; --line: color-mix(in oklab, var(--ink) 14%, transparent);
+    --paper: #fcf9f3; --star: #e3a73c;
+    --radius: 16px; --ease: cubic-bezier(.2,.7,.2,1); --ease-out: cubic-bezier(.16,1,.3,1);
+    --display: "Bricolage Grotesque", Georgia, serif; --body: "Hanken Grotesk", system-ui, sans-serif;
+    --s--1: clamp(.82rem,.78rem + .2vw,.92rem); --s-0: clamp(1rem,.95rem + .25vw,1.13rem);
+    --s-1: clamp(1.2rem,1.05rem + .6vw,1.55rem); --s-2: clamp(1.6rem,1.3rem + 1.4vw,2.4rem);
+    --s-3: clamp(2.1rem,1.5rem + 2.9vw,3.7rem); --s-4: clamp(2.8rem,1.7rem + 5vw,6rem);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--body); color: var(--ink); background: var(--bone); font-size: var(--s-0); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.0; letter-spacing: -.025em; font-weight: 800; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: min(1180px, 92vw); margin-inline: auto; }
+  .eyebrow { font-size: var(--s--1); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-deep); display: inline-flex; align-items: center; gap: .6rem; }
+  .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--accent); display: inline-block; }
+  body::after { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .035; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .btn { position: relative; display: inline-flex; align-items: center; gap: .55rem; font-family: var(--body); font-weight: 700; font-size: var(--s-0); padding: 1rem 1.6rem; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: transform .25s var(--ease), box-shadow .3s, background .25s, color .25s; line-height: 1; overflow: hidden; }
+  .btn span { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .5rem; }
+  .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 14px 30px -12px var(--accent); }
+  .btn-primary::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); transform: translateX(-120%); transition: transform .7s var(--ease); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 22px 40px -14px var(--accent); background: var(--accent-deep); }
+  .btn-primary:hover::before { transform: translateX(120%); }
+  .btn-ghost { background: transparent; border-color: currentColor; }
+  .btn-ghost:hover { transform: translateY(-3px); background: #fff; color: var(--slate); }
+  .btn-call { background: #fff; color: var(--slate); }
+  .btn-call:hover { transform: translateY(-3px); }
+
+  header.nav { position: sticky; top: 0; z-index: 60; transition: background .35s, backdrop-filter .35s, border-color .35s; border-bottom: 1px solid transparent; }
+  header.nav.scrolled { background: color-mix(in oklab, var(--slate) 92%, transparent); backdrop-filter: blur(12px) saturate(1.2); border-color: rgba(255,255,255,.08); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1.05rem 0; gap: 1rem; transition: padding .35s; }
+  header.nav.scrolled .nav-inner { padding: .7rem 0; }
+  .brand { display: flex; align-items: center; gap: .7rem; font-family: var(--display); font-weight: 800; font-size: 1.32rem; letter-spacing: -.02em; color: #fff; }
+  .brand .mark { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: var(--accent); color: #fff; font-size: 1.15rem; font-weight: 800; box-shadow: 0 8px 20px -8px var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 1.8rem; font-weight: 600; font-size: var(--s--1); }
+  .nav-links a:not(.btn) { color: rgba(255,255,255,.72); transition: color .2s; }
+  .nav-links a:not(.btn):hover { color: #fff; }
+  .nav-phone { display: inline-flex; align-items: center; gap: .5rem; font-family: var(--display); font-weight: 800; font-size: 1.08rem; color: #fff !important; }
+  @media (max-width: 880px) { .nav-links a:not(.btn):not(.nav-phone) { display: none; } }
+
+  .hero { position: relative; isolation: isolate; color: var(--bone); padding: clamp(3.5rem,8vw,8rem) 0 clamp(3rem,6vw,5.5rem); margin-top: -84px; padding-top: calc(clamp(3.5rem,8vw,8rem) + 84px); overflow: clip; }
+  .hero-bg { position: absolute; inset: -10% 0 0 0; z-index: -2; background-image: url("https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1700&q=80&auto=format&fit=crop"); background-size: cover; background-position: center; transform: scale(1.12); will-change: transform; }
+  .js .hero-bg { animation: heroZoom 18s var(--ease-out) forwards; }
+  @keyframes heroZoom { to { transform: scale(1); } }
+  .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, rgba(10,12,15,.95) 0%, rgba(10,12,15,.82) 38%, rgba(10,12,15,.45) 74%, rgba(10,12,15,.30) 100%); }
+  .hero::after { content: ""; position: absolute; top: -20%; right: -10%; width: 60%; height: 80%; z-index: -1; background: radial-gradient(closest-side, var(--accent-glow), transparent 70%); filter: blur(20px); opacity: .7; }
+  .hero-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(1.5rem,4vw,3.5rem); align-items: center; }
+  .hero h1 { font-size: var(--s-4); margin: 1.1rem 0 1.2rem; color: #fff; text-wrap: balance; }
+  .hero h1 .hl { color: var(--accent-light); }
+  .hero p.lede { font-size: var(--s-1); color: rgba(244,239,230,.9); max-width: 40ch; font-weight: 500; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.9rem; }
+  .hero .btn-ghost { color: #fff; }
+  .trust-row { display: flex; flex-wrap: wrap; gap: 1rem 1.8rem; margin-top: 2.1rem; align-items: center; }
+  .trust-item { display: flex; align-items: center; gap: .55rem; font-weight: 600; font-size: var(--s--1); color: rgba(244,239,230,.85); }
+  .trust-item svg { color: var(--accent-light); flex: none; }
+  .stars { color: var(--star); letter-spacing: 2px; font-size: 1.05rem; }
+
+  /* Animations are ENHANCEMENT ONLY — gated behind .js so content is always visible without JS */
+  .js [data-animate] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease-out), transform .9s var(--ease-out); }
+  body.loaded [data-animate] { opacity: 1; transform: none; }
+  body.loaded [data-animate="1"] { transition-delay: .05s; }
+  body.loaded [data-animate="2"] { transition-delay: .15s; }
+  body.loaded [data-animate="3"] { transition-delay: .25s; }
+  body.loaded [data-animate="4"] { transition-delay: .35s; }
+  body.loaded [data-animate="5"] { transition-delay: .5s; }
+  .js [data-reveal] { opacity: 0; transform: translateY(34px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  [data-reveal].in { opacity: 1; transform: none; }
+  [data-reveal].d1 { transition-delay: .08s; } [data-reveal].d2 { transition-delay: .16s; } [data-reveal].d3 { transition-delay: .24s; }
+
+  .quote-card { position: relative; background: var(--paper); color: var(--ink); border-radius: 20px; padding: clamp(1.4rem,2.5vw,2rem); box-shadow: 0 40px 80px -30px rgba(0,0,0,.7); }
+  .quote-card::before { content: ""; position: absolute; inset: -1.5px; border-radius: 21px; padding: 1.5px; background: linear-gradient(150deg, var(--accent), transparent 55%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  .quote-card .tag { position: absolute; top: -.85rem; left: 1.5rem; background: var(--accent); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: .4rem .75rem; border-radius: 999px; box-shadow: 0 8px 18px -8px var(--accent); }
+  .quote-card h3 { font-size: var(--s-1); margin: .3rem 0 1rem; }
+  .field { margin-bottom: .7rem; }
+  .field label { display: block; font-size: .76rem; font-weight: 700; color: var(--ink-soft); margin-bottom: .25rem; text-transform: uppercase; letter-spacing: .06em; }
+  .field input, .field select { width: 100%; padding: .85rem .9rem; border: 1.5px solid var(--line); border-radius: 11px; background: #fff; font-family: var(--body); font-size: var(--s-0); color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+  .field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-glow); }
+  .quote-card .btn-primary { width: 100%; justify-content: center; margin-top: .4rem; }
+  .quote-card .fineprint { font-size: .76rem; color: var(--ink-soft); text-align: center; margin-top: .6rem; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .quote-card { order: 2; } }
+
+  .marquee { background: var(--slate); color: var(--bone); padding: .95rem 0; overflow: hidden; border-block: 1px solid rgba(255,255,255,.07); }
+  .marquee-track { display: flex; gap: 0; width: max-content; }
+  .js .marquee-track { animation: marquee 32s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  .marquee-item { display: inline-flex; align-items: center; gap: .9rem; padding: 0 1.6rem; font-family: var(--display); font-weight: 700; font-size: 1.05rem; white-space: nowrap; color: rgba(244,239,230,.92); }
+  .marquee-item::after { content: "✦"; color: var(--accent-light); font-size: .8rem; margin-left: 1.6rem; }
+
+  .proof { background: var(--accent-deep); color: #fff; padding: 2rem 0; }
+  .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; }
+  .proof .num { font-family: var(--display); font-weight: 800; font-size: clamp(1.9rem,4vw,3rem); color: #fff; letter-spacing: -.03em; line-height: 1; }
+  .proof .lbl { font-size: var(--s--1); color: rgba(255,255,255,.82); font-weight: 600; margin-top: .4rem; }
+  .proof-grid > div + div { border-left: 1px solid rgba(255,255,255,.16); }
+  @media (max-width: 680px) { .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; } .proof-grid > div + div { border: none; } }
+
+  section.block { padding: clamp(4rem,8vw,7rem) 0; }
+  .sec-head { max-width: 56ch; margin-bottom: 2.8rem; }
+  .sec-head h2 { font-size: var(--s-3); margin: .7rem 0 .8rem; text-wrap: balance; }
+  .sec-head p { color: var(--ink-soft); font-size: var(--s-1); font-weight: 500; }
+
+  .services { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+  .svc { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; display: flex; flex-direction: column; gap: .5rem; transition: transform .3s var(--ease), box-shadow .3s, border-color .3s; overflow: hidden; }
+  .svc::before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: var(--accent); transform: scaleY(0); transform-origin: bottom; transition: transform .35s var(--ease); }
+  .svc:hover { transform: translateY(-5px); box-shadow: 0 26px 50px -28px rgba(24,27,31,.5); border-color: color-mix(in oklab, var(--accent) 35%, var(--line)); }
+  .svc:hover::before { transform: scaleY(1); }
+  .svc .k { font-family: var(--display); font-weight: 800; color: var(--accent-deep); font-size: 1.05rem; opacity: .55; }
+  .svc h3 { font-size: var(--s-1); }
+  .svc p { color: var(--ink-soft); font-size: var(--s--1); }
+  .svc.feature { grid-column: span 3; background: var(--slate); color: var(--bone); border-color: var(--slate); }
+  .svc.feature h3 { color: #fff; } .svc.feature .k { color: var(--accent-light); opacity: 1; } .svc.feature p { color: rgba(244,239,230,.8); }
+  .svc.wide { grid-column: span 3; } .svc.half { grid-column: span 2; }
+  @media (max-width: 880px) { .services { grid-template-columns: repeat(2, 1fr); } .svc, .svc.feature, .svc.wide, .svc.half { grid-column: span 1; } }
+
+  .transform { background: var(--slate); color: var(--bone); position: relative; overflow: clip; }
+  .transform::before { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 70%; background: radial-gradient(closest-side, var(--accent-glow), transparent 70%); filter: blur(30px); }
+  .transform .sec-head h2 { color: #fff; } .transform .sec-head p { color: rgba(244,239,230,.78); }
+  .ba { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: var(--radius); overflow: hidden; user-select: none; touch-action: none; box-shadow: 0 40px 90px -40px rgba(0,0,0,.8); cursor: ew-resize; border: 1px solid rgba(255,255,255,.1); }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  .ba .after-img { clip-path: inset(0 0 0 50%); }
+  .ba .lbl { position: absolute; top: 1rem; padding: .35rem .8rem; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: rgba(0,0,0,.55); color: #fff; backdrop-filter: blur(4px); }
+  .ba .lbl.b { left: 1rem; } .ba .lbl.a { right: 1rem; background: var(--accent); }
+  .ba-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; transform: translateX(-50%); box-shadow: 0 0 18px rgba(0,0,0,.5); }
+  .ba-knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 52px; height: 52px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: var(--slate); box-shadow: 0 10px 26px -8px rgba(0,0,0,.6); }
+  .ba-knob svg { width: 22px; height: 22px; }
+  .ba-hint { text-align: center; margin-top: 1rem; font-size: var(--s--1); color: rgba(244,239,230,.6); }
+
+  .work { background: var(--bone-2); }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .shot { aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; position: relative; background: var(--slate-2); border: 1px solid var(--line); }
+  .shot:first-child { grid-column: span 2; aspect-ratio: 8/5; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease); }
+  .shot:hover img { transform: scale(1.07); }
+  .shot .cap { position: absolute; left: 0; bottom: 0; padding: 1rem 1.1rem; color: #fff; font-weight: 700; font-size: var(--s--1); background: linear-gradient(to top, rgba(0,0,0,.66), transparent); width: 100%; }
+  @media (max-width: 680px) { .gallery { grid-template-columns: 1fr 1fr; } .shot:first-child { grid-column: span 2; } }
+
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .review { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.7rem; display: flex; flex-direction: column; gap: .8rem; position: relative; }
+  .review .qmark { font-family: var(--display); font-size: 3.4rem; line-height: .6; color: var(--accent); opacity: .25; }
+  .review p { font-size: var(--s-0); }
+  .review .who { display: flex; align-items: center; gap: .7rem; margin-top: auto; }
+  .review .av { width: 40px; height: 40px; border-radius: 50%; background: var(--accent-deep); color: #fff; display: grid; place-items: center; font-family: var(--display); font-weight: 800; }
+  .review .who b { display: block; font-size: var(--s--1); } .review .who span { font-size: .78rem; color: var(--ink-soft); }
+  @media (max-width: 820px) { .reviews { grid-template-columns: 1fr; } }
+
+  .guarantee { background: var(--slate); color: var(--bone); }
+  .g-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(1.5rem,4vw,3.4rem); align-items: center; }
+  .g-figure { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; border: 1px solid rgba(255,255,255,.1); }
+  .g-figure img { width: 100%; height: 100%; object-fit: cover; }
+  .guarantee h2 { color: #fff; font-size: var(--s-3); margin: .5rem 0 1.4rem; }
+  .guarantee .eyebrow { color: var(--accent-light); } .guarantee .eyebrow::before { background: var(--accent-light); }
+  .g-list { list-style: none; display: grid; gap: 1rem; }
+  .g-list li { display: flex; gap: .85rem; align-items: flex-start; font-size: var(--s-0); color: rgba(244,239,230,.88); }
+  .g-list svg { color: var(--accent-light); flex: none; margin-top: 3px; }
+  @media (max-width: 820px) { .g-grid { grid-template-columns: 1fr; } .g-figure { aspect-ratio: 16/10; max-height: 340px; } }
+
+  .final { position: relative; isolation: isolate; text-align: center; color: var(--bone); padding: clamp(4.5rem,9vw,7.5rem) 0; overflow: clip; }
+  .final-bg { position: absolute; inset: 0; z-index: -2; background-image: url("https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1400&q=80&auto=format&fit=crop"); background-size: cover; background-position: center; }
+  .final::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(10,12,15,.88), rgba(10,12,15,.93)); }
+  .final h2 { font-size: var(--s-3); margin-bottom: 1rem; color: #fff; text-wrap: balance; }
+  .final p { color: rgba(244,239,230,.85); font-size: var(--s-1); max-width: 46ch; margin: 0 auto 1.9rem; }
+  .final .btn-group { display: inline-flex; gap: .8rem; flex-wrap: wrap; justify-content: center; }
+  .final .btn-ghost { color: #fff; }
+
+  footer { background: var(--slate-2); color: rgba(244,239,230,.7); padding: 2.8rem 0; font-size: var(--s--1); }
+  .foot-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: center; }
+  footer .brand { color: var(--bone); } footer a:hover { color: var(--accent-light); }
+
+  .mobile-bar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 70; display: none; gap: .6rem; padding: .65rem; background: color-mix(in oklab, var(--slate) 96%, transparent); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,.08); }
+  .mobile-bar .btn { flex: 1; justify-content: center; padding: .9rem; }
+  @media (max-width: 700px) { .mobile-bar { display: flex; } body { padding-bottom: 4.6rem; } }
+
+  .demo-ribbon { position: fixed; top: 16px; right: -46px; transform: rotate(45deg); background: var(--accent); color: #fff; font-weight: 700; font-size: .68rem; letter-spacing: .12em; padding: .38rem 3rem; z-index: 80; box-shadow: 0 6px 16px -6px rgba(0,0,0,.5); text-transform: uppercase; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+    html { scroll-behavior: auto; }
+    [data-animate], [data-reveal] { opacity: 1 !important; transform: none !important; }
+    .hero-bg { transform: scale(1) !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="demo-ribbon">Preview</div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="mark">RV</span>Revive Pressure Washing</a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#transform">See the difference</a>
+        <a href="#reviews">Reviews</a>
+        <a class="nav-phone" href="tel:+18329220510">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (832) 922-0510
+        </a>
+        <a class="btn btn-primary" href="#quote-form"><span>Free Estimate</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow" data-animate="1">Houston, TX · Licensed &amp; Insured</span>
+          <h1 data-animate="2">Houston's <span class="hl">pressure washing</span> pros — like-new, guaranteed.</h1>
+          <p class="lede" data-animate="3">Free estimates and delivering exactly what customers expect, with free consultations. We treat your property like our own.</p>
+          <div class="hero-cta" data-animate="4">
+            <a class="btn btn-primary" href="#quote-form"><span>Get my free estimate →</span></a>
+            <a class="btn btn-ghost" href="tel:+18329220510"><span>Call (832) 922-0510</span></a>
+          </div>
+          <div class="trust-row" data-animate="5">
+            <div class="trust-item"><span class="stars">★★★★★</span> 4.9 · 130+ reviews</div>
+            <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> 6+ years in Houston</div>
+            <div class="trust-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Workmanship guarantee</div>
+          </div>
+        </div>
+
+        <form class="quote-card" id="quote-form" data-animate="4">
+          <span class="tag">Free · No obligation</span>
+          <h3>Get your free estimate</h3>
+          <div class="field"><label for="name">Name</label><input id="name" name="name" required placeholder="Your name" /></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="(555) 555-5555" /></div>
+          <div class="field"><label for="service">What do you need?</label>
+            <select id="service" name="service"><option>House & Soft Washing</option><option>Driveways & Concrete</option><option>Roof Soft-Wash</option><option>Something else</option></select>
+          </div>
+          <button class="btn btn-primary" type="submit"><span>Request my estimate</span></button>
+          <p class="fineprint">We reply within 24 hours. No spam, ever.</p>
+        </form>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee" data-area="Houston & surrounding areas" data-warranty="100%" data-rating="4.9"></div></div>
+
+    <section class="proof">
+      <div class="wrap proof-grid">
+        <div data-reveal><div class="num" data-count="6+">6+</div><div class="lbl">Years in business</div></div>
+        <div class="d1" data-reveal><div class="num" data-count="1,200+">1,200+</div><div class="lbl">Projects completed</div></div>
+        <div class="d2" data-reveal><div class="num" data-count="4.9★">4.9★</div><div class="lbl">130+ Google reviews</div></div>
+        <div class="d3" data-reveal><div class="num">100%</div><div class="lbl">Workmanship warranty</div></div>
+      </div>
+    </section>
+
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">What we do</span>
+          <h2>Curb appeal, restored.</h2>
+          <p>Soft-washing and pressure washing for homes across Houston & surrounding areas — siding, driveways, roofs and more.</p>
+        </div>
+        <div class="services">
+          <div class="svc feature" data-reveal><span class="k">01</span><h3>House & Soft Washing</h3><p>Gentle soft-washing that safely strips away mold, mildew, and grime — without damaging your siding or roof.</p></div>
+          <div class="svc wide d1" data-reveal><span class="k">02</span><h3>Driveways & Concrete</h3><p>Restore your concrete to like-new. Oil, rust, and years of buildup — gone.</p></div>
+          <div class="svc half" data-reveal><span class="k">03</span><h3>Roof Soft-Wash</h3><p>Low-pressure roof cleaning that kills algae streaks and extends your roof's life.</p></div>
+          <div class="svc half d1" data-reveal><span class="k">04</span><h3>Pool Decks & Cages</h3><p>Clean, safe, slip-free pool decks and screen enclosures.</p></div>
+          <div class="svc half d2" data-reveal><span class="k">05</span><h3>Paver Sealing</h3><p>Seal and protect your pavers so they stay sharp for years.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block transform" id="transform">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">See the difference</span>
+          <h2>From worn-out to remarkable.</h2>
+          <p>Drag the slider to see the kind of transformation Revive Pressure Washing delivers. (We'll drop in your real before/after photos before launch.)</p>
+        </div>
+        <div class="ba" id="ba" data-reveal>
+          <img class="before-img" src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1400&q=80&auto=format&fit=crop" alt="Before" />
+          <img class="after-img" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1400&q=80&auto=format&fit=crop" alt="After" />
+          <span class="lbl b">Before</span>
+          <span class="lbl a">After</span>
+          <div class="ba-handle" id="baHandle">
+            <div class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div>
+          </div>
+        </div>
+        <p class="ba-hint">← drag to reveal →</p>
+      </div>
+    </section>
+
+    <section class="block work" id="work">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="eyebrow">Recent work</span>
+          <h2>Proof in every project</h2>
+          <p>A few recent jobs around Houston. We'll swap these for your real photos before launch.</p>
+        </div>
+        <div class="gallery">
+          <div class="shot" data-reveal><img loading="lazy" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1100&q=80&auto=format&fit=crop" alt="House Wash in Houston" /><div class="cap">House Wash · Houston</div></div>
+          <div class="shot d1" data-reveal><img loading="lazy" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=800&q=80&auto=format&fit=crop" alt="Driveway & Concrete" /><div class="cap">Driveway & Concrete</div></div>
+          <div class="shot d2" data-reveal><img loading="lazy" src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&q=80&auto=format&fit=crop" alt="Roof Soft-Wash" /><div class="cap">Roof Soft-Wash</div></div>
+          <div class="shot" data-reveal><img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop" alt="Pool Deck" /><div class="cap">Pool Deck</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="reviews">
+      <div class="wrap">
+        <div class="sec-head" data-reveal><span class="eyebrow">Neighbors trust us</span><h2>4.9★ across 130+ reviews</h2></div>
+        <div class="reviews">
+          <div class="review" data-reveal><div class="qmark">"</div><span class="stars">★★★★★</span><p>Our driveway and the whole front of the house look brand new. You can see exactly where they stopped — night and day. Fast, friendly, and fair.</p><div class="who"><span class="av">V</span><div><b>Verified Homeowner</b><span>Houston, TX</span></div></div></div>
+          <div class="review d1" data-reveal><div class="qmark">"</div><span class="stars">★★★★★</span><p>Soft-washed our roof and killed all the black streaks without any damage. Showed up on time and did exactly what they promised.</p><div class="who"><span class="av">L</span><div><b>Local Customer</b><span>Houston, TX</span></div></div></div>
+          <div class="review d2" data-reveal><div class="qmark">"</div><span class="stars">★★★★★</span><p>Booked online, paid online, and the results speak for themselves. Pool deck has never looked better. Will absolutely use again.</p><div class="who"><span class="av">R</span><div><b>Repeat Client</b><span>Houston, TX</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block guarantee">
+      <div class="wrap g-grid">
+        <div class="g-figure" data-reveal><img loading="lazy" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop" alt="Revive Pressure Washing at work" /></div>
+        <div class="d1" data-reveal>
+          <span class="eyebrow">Why Revive Pressure Washing</span>
+          <h2>Done right, or we make it right.</h2>
+          <ul class="g-list">
+            <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Licensed, bonded &amp; fully insured — you're protected.</li>
+            <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Upfront, written quotes. No surprise charges.</li>
+            <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 100% workmanship warranty on every job.</li>
+            <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Local, family-run, and here when you call.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="final-bg"></div>
+      <div class="wrap">
+        <span class="eyebrow" style="color:var(--accent-light)" data-reveal>Ready when you are</span>
+        <h2 class="d1" data-reveal>Let's get your exterior cleaning handled.</h2>
+        <p class="d1" data-reveal>Free estimates, honest pricing, and work you can count on. Reach out today.</p>
+        <div class="btn-group d2" data-reveal>
+          <a class="btn btn-primary" href="#quote-form"><span>Get my free estimate →</span></a>
+          <a class="btn btn-ghost" href="tel:+18329220510"><span>Call (832) 922-0510</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <a class="brand" href="#top"><span class="mark">RV</span>Revive Pressure Washing</a>
+      <div>Houston, TX · Serving Houston & surrounding areas</div>
+      <div><a href="tel:+18329220510">(832) 922-0510</a> · <a href="mailto:info@revivemyhouse.com">info@revivemyhouse.com</a></div>
+    </div>
+  </footer>
+
+  <div class="mobile-bar">
+    <a class="btn btn-call" href="tel:+18329220510"><span>Call now</span></a>
+    <a class="btn btn-primary" href="#quote-form"><span>Free estimate</span></a>
+  </div>
+
+  <script>
+    // Failsafe FIRST: reveal everything even if later code throws. No template tokens in this script.
+    (function () {
+      try { document.body.classList.add("loaded"); } catch (e) {}
+      setTimeout(function () {
+        var r = document.querySelectorAll("[data-reveal]");
+        for (var i = 0; i < r.length; i++) r[i].classList.add("in");
+      }, 1400);
+    })();
+
+    (function () {
+      var nav = document.getElementById("nav");
+      var onScroll = function () { if (nav) nav.classList.toggle("scrolled", window.scrollY > 20); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      var heroBg = document.querySelector(".hero-bg");
+      var ticking = false;
+      window.addEventListener("scroll", function () {
+        if (ticking || !heroBg) return; ticking = true;
+        requestAnimationFrame(function () {
+          var y = window.scrollY;
+          if (y < window.innerHeight) heroBg.style.transform = "translate3d(0," + (y * 0.18) + "px,0) scale(1.06)";
+          ticking = false;
+        });
+      }, { passive: true });
+
+      function countUp(el) {
+        if (el.dataset.done) return; el.dataset.done = "1";
+        var raw = el.dataset.count || "";
+        var m = raw.match(/([\d,]+(?:\.\d+)?)/);
+        if (!m) { el.textContent = raw; return; }
+        var numStr = m[1].replace(/,/g, "");
+        var dec = (numStr.split(".")[1] || "").length;
+        var target = parseFloat(numStr);
+        var hasComma = m[1].indexOf(",") !== -1;
+        var pre = raw.slice(0, m.index), post = raw.slice(m.index + m[1].length);
+        var t0 = performance.now(), dur = 1500;
+        function fmt(n) { var s = dec ? n.toFixed(dec) : Math.round(n).toString(); if (hasComma) s = Number(s).toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }); return pre + s + post; }
+        (function tick(t) { var p = Math.min(1, (t - t0) / dur); p = 1 - Math.pow(1 - p, 4); el.textContent = fmt(target * p); if (p < 1) requestAnimationFrame(tick); })(t0);
+      }
+
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            e.target.classList.add("in");
+            var nums = e.target.querySelectorAll ? e.target.querySelectorAll("[data-count]") : [];
+            for (var i = 0; i < nums.length; i++) countUp(nums[i]);
+            io.unobserve(e.target);
+          });
+        }, { threshold: 0.18 });
+        var rev = document.querySelectorAll("[data-reveal]");
+        for (var i = 0; i < rev.length; i++) io.observe(rev[i]);
+      }
+
+      // Marquee — values come from data-* attributes (never injected into JS source)
+      var mq = document.getElementById("marquee");
+      if (mq) {
+        var area = mq.getAttribute("data-area") || "";
+        var towns = area.split(/,|&| and /).map(function (s) { return s.trim(); }).filter(Boolean);
+        var extras = ["Licensed & Insured", "Free Estimates", (mq.getAttribute("data-warranty") || "") + " Warranty", (mq.getAttribute("data-rating") || "") + "★ Rated"];
+        var items = towns.concat(extras);
+        var frag = document.createDocumentFragment();
+        function add(list) {
+          list.forEach(function (t) { var s = document.createElement("span"); s.className = "marquee-item"; s.textContent = t; frag.appendChild(s); });
+        }
+        add(items); add(items);
+        mq.appendChild(frag);
+      }
+
+      // Before/After slider
+      var ba = document.getElementById("ba");
+      if (ba) {
+        var after = ba.querySelector(".after-img");
+        var handle = document.getElementById("baHandle");
+        var dragging = false;
+        function setPos(clientX) {
+          var r = ba.getBoundingClientRect();
+          var p = ((clientX - r.left) / r.width) * 100;
+          p = Math.max(2, Math.min(98, p));
+          if (after) after.style.clipPath = "inset(0 0 0 " + p + "%)";
+          if (handle) handle.style.left = p + "%";
+        }
+        var startX = function (e) { dragging = true; setPos((e.touches ? e.touches[0] : e).clientX); };
+        var moveX = function (e) { if (!dragging) return; setPos((e.touches ? e.touches[0] : e).clientX); };
+        var endX = function () { dragging = false; };
+        ba.addEventListener("mousedown", startX); window.addEventListener("mousemove", moveX); window.addEventListener("mouseup", endX);
+        ba.addEventListener("touchstart", startX, { passive: true }); window.addEventListener("touchmove", moveX, { passive: true }); window.addEventListener("touchend", endX);
+      }
+
+      // Quote form — generic confirmation, no template tokens
+      var form = document.getElementById("quote-form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          while (form.firstChild) form.removeChild(form.firstChild);
+          var h = document.createElement("h3"); h.style.margin = ".4rem 0 .6rem"; h.textContent = "Thanks — we got it ✓";
+          var p = document.createElement("p"); p.style.color = "var(--ink-soft)"; p.textContent = "This is a live preview. On your real site, this lead goes straight to your phone & inbox so you never miss a job.";
+          form.appendChild(h); form.appendChild(p);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
